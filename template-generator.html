@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Mockup Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        .mockup {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant {
+            background: linear-gradient(135deg, #7c2d12 0%, #dc2626 50%, #fb923c 100%);
+        }
+
+        .ecommerce {
+            background: linear-gradient(135deg, #0e7490 0%, #06b6d4 50%, #67e8f9 100%);
+        }
+
+        .business {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #93c5fd 100%);
+        }
+
+        .fitness {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fdba74 100%);
+        }
+
+        .portfolio {
+            background: linear-gradient(135deg, #6b21a8 0%, #a855f7 50%, #e9d5ff 100%);
+        }
+
+        .realestate {
+            background: linear-gradient(135deg, #115e59 0%, #14b8a6 50%, #5eead4 100%);
+        }
+
+        .content {
+            width: 90%;
+            height: 90%;
+            margin: 5%;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            margin-right: 8px;
+        }
+
+        .bar {
+            height: 30px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .bar.short {
+            width: 60%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .box {
+            height: 120px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="restaurant" class="mockup restaurant">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ecommerce" class="mockup ecommerce">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="business" class="mockup business">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fitness" class="mockup fitness">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio" class="mockup portfolio">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="realestate" class="mockup realestate">
+        <div class="content">
+            <div class="header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar short"></div>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
