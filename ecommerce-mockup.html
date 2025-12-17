@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .mockup {
+            width: 1200px;
+            height: 800px;
+            background: linear-gradient(135deg, #0e7490 0%, #06b6d4 50%, #67e8f9 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .website {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0e7490, #06b6d4);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item {
+            color: #fff;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            height: 200px;
+            background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(14, 116, 144, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0 0 15px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .products {
+            padding: 40px 50px;
+            background: #f0f9ff;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0e7490;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 120px;
+            background: linear-gradient(135deg, #06b6d4, #67e8f9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0e7490;
+            margin-bottom: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #06b6d4;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mockup">
+        <div class="website">
+            <div class="header">
+                <div class="logo">ShopHub</div>
+                <div class="nav">
+                    <div class="nav-item">Products</div>
+                    <div class="nav-item">Cart</div>
+                    <div class="nav-item">Account</div>
+                </div>
+            </div>
+            <div class="hero">
+                <h1>Summer Sale - Up to 50% Off</h1>
+                <p>Shop the latest trends</p>
+            </div>
+            <div class="products">
+                <div class="section-title">Featured Products</div>
+                <div class="product-grid">
+                    <div class="product">
+                        <div class="product-image">👕</div>
+                        <div class="product-info">
+                            <div class="product-name">T-Shirt</div>
+                            <div class="product-price">$29.99</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">👟</div>
+                        <div class="product-info">
+                            <div class="product-name">Sneakers</div>
+                            <div class="product-price">$89.99</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">👜</div>
+                        <div class="product-info">
+                            <div class="product-name">Bag</div>
+                            <div class="product-price">$49.99</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">⌚</div>
+                        <div class="product-info">
+                            <div class="product-name">Watch</div>
+                            <div class="product-price">$199.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

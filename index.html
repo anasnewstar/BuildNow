@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildNow - Your Dream Website Starts Here</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Linkvertise Ad Script -->
+    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
+    <script>linkvertise(1275707, { whitelist: [], blacklist: [""] });</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1147 50%, #2d1b69 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        /* Particle System */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #06b6d4;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: particleFloat 4s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(0);
+            }
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .orb1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            top: 10%;
+            left: 10%;
+        }
+
+        .orb2 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(45deg, #ec4899, #8b5cf6);
+            bottom: 10%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #f59e0b, #ef4444);
+            top: 50%;
+            left: 50%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(50px, -50px) scale(1.1) rotate(120deg);
+            }
+
+            66% {
+                transform: translate(-50px, 50px) scale(0.9) rotate(240deg);
+            }
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #06b6d4, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+            }
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #06b6d4, #ec4899);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 12rem 5% 6rem;
+            position: relative;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+
+        /* Animated shapes in hero */
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: heroShapeFloat 20s ease-in-out infinite;
+        }
+
+        .hero-shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .hero-shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            bottom: 20%;
+            right: -5%;
+            animation-delay: -7s;
+        }
+
+        .hero-shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            top: 50%;
+            right: 20%;
+            animation-delay: -14s;
+        }
+
+        @keyframes heroShapeFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: translate(100px, -100px) rotate(90deg) scale(1.2);
+            }
+
+            50% {
+                transform: translate(200px, 50px) rotate(180deg) scale(0.8);
+            }
+
+            75% {
+                transform: translate(50px, 150px) rotate(270deg) scale(1.1);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #06b6d4 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: heroEntry 1s ease-out, glow 3s ease-in-out infinite 1s;
+            background-size: 200% 200%;
+        }
+
+        @keyframes heroEntry {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
+                background-position: 0% 50%;
+            }
+
+            50% {
+                filter: drop-shadow(0 0 40px rgba(236, 72, 153, 0.8));
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #ec4899);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.6s backwards, pulse 2s ease-in-out infinite 2s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(236, 72, 153, 0.6);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+            animation: floatAround 20s ease-in-out infinite;
+        }
+
+        @keyframes floatAround {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(100px, -100px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(200px, 0) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(100px, 100px) rotate(270deg);
+            }
+        }
+
+        /* Demo Templates Section */
+        .templates {
+            padding: 5rem 5%;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #fff, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-title.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .template-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px) rotateX(10deg);
+        }
+
+        .template-card.animate {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+
+        .template-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(236, 72, 153, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .template-card:hover::before {
+            opacity: 1;
+        }
+
+        .template-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(6, 182, 212, 0.4);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+
+        .template-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s;
+        }
+
+        /* Template specific backgrounds */
+        .template-image.restaurant {
+            background: linear-gradient(135deg, #7c2d12 0%, #dc2626 50%, #fb923c 100%);
+        }
+
+        .template-image.ecommerce {
+            background: linear-gradient(135deg, #0e7490 0%, #06b6d4 50%, #67e8f9 100%);
+        }
+
+        .template-image.business {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #93c5fd 100%);
+        }
+
+        .template-image.fitness {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fdba74 100%);
+        }
+
+        .template-image.portfolio {
+            background: linear-gradient(135deg, #6b21a8 0%, #a855f7 50%, #e9d5ff 100%);
+        }
+
+        .template-image.realestate {
+            background: linear-gradient(135deg, #115e59 0%, #14b8a6 50%, #5eead4 100%);
+        }
+
+        /* Template preview mockup */
+        .template-preview {
+            width: 90%;
+            height: 85%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .preview-header {
+            height: 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+            gap: 0.3rem;
+        }
+
+        .preview-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .preview-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .preview-bar {
+            height: 15px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));
+            border-radius: 3px;
+        }
+
+        .preview-bar.short {
+            width: 60%;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.3rem;
+            flex: 1;
+        }
+
+        .preview-box {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+            border-radius: 4px;
+        }
+
+        .template-card:hover .template-image {
+            transform: scale(1.05) rotateY(5deg);
+        }
+
+        .template-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .template-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .template-card:hover h3 {
+            color: #06b6d4;
+        }
+
+        .template-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            transition: color 0.3s;
+        }
+
+        .template-card:hover p {
+            color: #cbd5e1;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 5rem 5%;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        /* Fix dropdown option text color */
+        .form-group select option {
+            background: #1e293b;
+            color: #fff;
+            padding: 0.5rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #06b6d4;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-upload-label:hover {
+            border-color: #06b6d4;
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #ec4899);
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(16, 185, 129, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-animation">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <header>
+        <div class="logo">BuildNow</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#templates">Templates</a>
+            <a href="#contact">Get Started</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-shape"></div>
+        <div class="hero-shape"></div>
+        <div class="hero-shape"></div>
+        <h1>Your Dream Website<br>Starts Here</h1>
+        <p>Professional, stunning websites built just for you. Share your vision, and we'll bring it to life with
+            pixel-perfect precision.</p>
+        <a href="#contact" class="cta-button">Start Your Project</a>
+    </section>
+
+    <section id="templates" class="templates">
+        <h2 class="section-title">Beautiful Templates We Build</h2>
+        <div class="templates-grid">
+            <a href="restaurant-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image restaurant">
+                    <img src="images/restaurant.png" alt="Restaurant & Cafe Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>Restaurant & Cafe</h3>
+                <p>Elegant designs for restaurants, cafes, and food businesses with menu showcases and online ordering.
+                </p>
+            </a>
+            <a href="ecommerce-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image ecommerce">
+                    <img src="images/ecommerce.png" alt="E-Commerce Store Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>E-Commerce Store</h3>
+                <p>Modern online stores with product galleries, shopping carts, and secure checkout systems.</p>
+            </a>
+            <a href="business-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image business">
+                    <img src="images/business.png" alt="Business & Corporate Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>Business & Corporate</h3>
+                <p>Professional websites for businesses, agencies, and corporate services with portfolio sections.</p>
+            </a>
+            <a href="fitness-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image fitness">
+                    <img src="images/fitness.png" alt="Fitness & Wellness Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>Fitness & Wellness</h3>
+                <p>Dynamic websites for gyms, yoga studios, and wellness centers with class schedules.</p>
+            </a>
+            <a href="portfolio-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image portfolio">
+                    <img src="images/portfolio.png" alt="Creative Portfolio Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>Creative Portfolio</h3>
+                <p>Stunning portfolios for artists, photographers, and designers to showcase their work.</p>
+            </a>
+            <a href="realestate-mockup.html" class="template-card"
+                style="text-decoration: none; display: block; color: inherit;">
+                <div class="template-image realestate">
+                    <img src="images/realestate.png" alt="Real Estate Template"
+                        style="width:100%; height:100%; object-fit:cover; border-radius: 10px;">
+                </div>
+                <h3>Real Estate</h3>
+                <p>Beautiful property listings with virtual tours, search filters, and contact forms.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="form-section">
+        <div class="form-container">
+            <h2 class="section-title">Let's Build Your Website</h2>
+            <form id="buildForm">
+                <div class="form-group">
+                    <label for="siteName">Website/Business Name *</label>
+                    <input type="text" id="siteName" name="siteName" required placeholder="e.g., Joe's Coffee Shop">
+                </div>
+
+                <div class="form-group">
+                    <label for="businessType">Type of Business *</label>
+                    <select id="businessType" name="businessType" required>
+                        <option value="">Select your business type</option>
+                        <option value="Restaurant/Cafe">Restaurant/Cafe</option>
+                        <option value="E-Commerce">E-Commerce Store</option>
+                        <option value="Business/Corporate">Business/Corporate</option>
+                        <option value="Fitness/Wellness">Fitness/Wellness</option>
+                        <option value="Creative/Portfolio">Creative/Portfolio</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Store/Business Location *</label>
+                    <input type="text" id="location" name="location" required
+                        placeholder="e.g., 123 Main St, New York, NY">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Tell Us About Your Vision *</label>
+                    <textarea id="description" name="description" required
+                        placeholder="Describe what you want your website to look like, what features you need, colors you prefer, etc."></textarea>
+                </div>
+
+
+
+                <button type="submit" class="submit-button">Send My Project Details</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="success-message" id="successMessage">
+        <h2 style="margin-bottom: 1rem;">✅ Success!</h2>
+        <p>Your project details have been sent. We'll contact you soon!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BuildNow. All rights reserved. | Building dreams, one website at a time.</p>
+    </footer>
+
+    <script>
+        // ===== SCROLL ANIMATION OBSERVER =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const templateCards = document.querySelectorAll('.template-card');
+
+            sectionTitles.forEach(title => observer.observe(title));
+
+            // Stagger animation for cards
+            templateCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Add floating elements to hero
+            addFloatingElements();
+        });
+
+        // ===== PARTICLE EFFECTS =====
+        function createParticles(x, y, count = 15) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = x + (Math.random() - 0.5) * 100 + 'px';
+                particle.style.top = y + 'px';
+                particle.style.background = ['#06b6d4', '#ec4899', '#f59e0b'][Math.floor(Math.random() * 3)];
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 4000);
+            }
+        }
+
+        // Particle effect on CTA button hover
+        const ctaButton = document.querySelector('.cta-button');
+        if (ctaButton) {
+            ctaButton.addEventListener('mouseenter', function (e) {
+                const rect = this.getBoundingClientRect();
+                createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2, 10);
+            });
+        }
+
+        // ===== PARALLAX SCROLLING =====
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.hero');
+                    const orbs = document.querySelectorAll('.orb');
+
+                    if (hero && scrolled < 1000) {
+                        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                        hero.style.opacity = Math.max(0, 1 - (scrolled / 800));
+                    }
+
+                    orbs.forEach((orb, index) => {
+                        const speed = 0.05 + (index * 0.03);
+                        orb.style.transform = `translate(${scrolled * speed}px, ${scrolled * speed}px)`;
+                    });
+
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // ===== 3D TILT EFFECT ON CARDS =====
+        const cards = document.querySelectorAll('.template-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // ===== FLOATING ELEMENTS =====
+        function addFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const emojis = ['✨', '🚀', '💎', '⭐', '🎨'];
+                for (let i = 0; i < 5; i++) {
+                    const floater = document.createElement('div');
+                    floater.className = 'floating-element';
+                    floater.textContent = emojis[i];
+                    floater.style.fontSize = '2rem';
+                    floater.style.left = Math.random() * 100 + '%';
+                    floater.style.top = Math.random() * 100 + '%';
+                    floater.style.animationDelay = `-${Math.random() * 20}s`;
+                    hero.appendChild(floater);
+                }
+            }
+        }
+
+
+
+        // ===== FORM SUBMISSION WITH ANIMATIONS =====
+        document.getElementById('buildForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitButton = this.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.style.background = 'linear-gradient(135deg, #8b5cf6, #06b6d4)';
+            submitButton.disabled = true;
+
+            const formData = new FormData(this);
+
+            // Build email content
+            let emailBody = `
+NEW WEBSITE PROJECT REQUEST
+============================
+
+BUSINESS INFORMATION:
+- Website/Business Name: ${formData.get('siteName')}
+- Business Type: ${formData.get('businessType')}
+- Location: ${formData.get('location')}
+
+CONTACT INFORMATION:
+- Email: ${formData.get('email')}
+- Phone: ${formData.get('phone') || 'Not provided'}
+
+PROJECT DETAILS:
+- Vision/Description: ${formData.get('description')}
+
+============================
+Submitted on: ${new Date().toLocaleString()}
+            `.trim();
+
+            // Using FormSubmit.co service to send email
+            const submitData = new FormData();
+            submitData.append('_to', 'rubayetahmedrony@gmail.com');
+            submitData.append('_subject', `New BuildNow Project: ${formData.get('siteName')}`);
+            submitData.append('_template', 'box');
+            submitData.append('_captcha', 'false');
+            submitData.append('message', emailBody);
+
+            // Add all form fields
+            submitData.append('Business_Name', formData.get('siteName'));
+            submitData.append('Business_Type', formData.get('businessType'));
+            submitData.append('Location', formData.get('location'));
+            submitData.append('Email', formData.get('email'));
+            submitData.append('Phone', formData.get('phone'));
+            submitData.append('Description', formData.get('description'));
+
+            try {
+                const response = await fetch('https://formsubmit.co/rubayetahmedrony@gmail.com', {
+                    method: 'POST',
+                    body: submitData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                // Show success message with celebration particles
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.add('show');
+
+                // Create celebration particle burst
+                for (let i = 0; i < 40; i++) {
+                    setTimeout(() => {
+                        createParticles(window.innerWidth / 2, window.innerHeight / 2, 1);
+                    }, i * 30);
+                }
+
+                this.reset();
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.style.background = '';
+                submitButton.disabled = false;
+
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 5000);
+
+            } catch (error) {
+                submitButton.textContent = originalText;
+                submitButton.style.background = '';
+                submitButton.disabled = false;
+                alert('There was an error sending your request. Please try again or email us directly at rubayetahmedrony@gmail.com');
+            }
+        });
+
+        // ===== SMOOTH SCROLLING WITH OFFSET =====
+
+    </script>
+</body>
+
+</html>
